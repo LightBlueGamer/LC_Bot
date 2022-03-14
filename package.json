@@ -1,0 +1,25 @@
+{
+  "name": "lc-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "@joshdb/core": "^1.2.7",
+    "@joshdb/sqlite": "^1.1.9",
+    "@sapphire/eslint-config": "^4.2.1",
+    "@sapphire/ts-config": "^3.3.1",
+    "@types/node": "^17.0.21",
+    "discord-api-types": "^0.27.0",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "pretty-ms": "^7.0.1"
+  }
+}
