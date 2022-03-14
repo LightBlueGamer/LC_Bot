@@ -2,10 +2,6 @@ import { readdirSync } from "fs"
 import type { Event, Command } from './types';
 import { Client, Intents, Collection } from 'discord.js';
 
-import { URL } from 'url';
-
-const __dirname = new URL('.', import.meta.url).pathname.slice(1);
-
 export const client = new Client({
   intents: [
     Intents.FLAGS.GUILDS,
@@ -20,7 +16,7 @@ export const commands = new Collection<string, Command>();
 export const events = new Collection<string, Event>();
 
 (async () => {
-    const eventFiles: Array<string> = readdirSync(`${__dirname}events`).filter((file) => file.endsWith('js'));
+    const eventFiles: Array<string> = readdirSync(`./dist/events`).filter((file) => file.endsWith('js'));
 
     for (const file of eventFiles) {
         const event: Event = (await import(`./events/${file}`)).default;
@@ -34,7 +30,7 @@ export const events = new Collection<string, Event>();
         console.log(`The ${event.name} event has been loaded.`);
     }
 
-    const commandFiles: Array<string> = readdirSync(`${__dirname}commands`).filter((file) => file.endsWith('js'));
+    const commandFiles: Array<string> = readdirSync(`./dist/commands`).filter((file) => file.endsWith('js'));
 
     for (const file of commandFiles) {
         const command: Command = (await import(`./commands/${file}`)).default;
