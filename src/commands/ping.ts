@@ -18,10 +18,7 @@ export default {
             .setColor('BLURPLE')
             .setFooter({ text: `Requested by ${message.author.tag}` });
 
-        await message
-            .reply({
-                embeds: [embed]
-            })
-            .catch((err) => console.error(err));
+        msg.delete();
+        await message.reply({embeds: [embed]}).catch((err) => console.error(err));
     }
 };

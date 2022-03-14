@@ -11,7 +11,7 @@ export default {
         if (message.channel.type !== 'GUILD_TEXT' || message.author.bot) return;
 
         const prefixMention = new RegExp(`^<@!?${client?.user?.id}> `);
-        const prefix = message?.content?.match(prefixMention) ? message?.content?.match(prefixMention)![0] : "?";
+        const prefix = message?.content?.match(prefixMention) ? message?.content?.match(prefixMention)![0] : "!";
 
         if (!message.content.startsWith(prefix)) return;
 

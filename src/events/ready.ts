@@ -9,5 +9,10 @@ export default {
         if(channel?.isText()) {
             channel.messages.fetch('952961652666548254');
         }
+
+        const channel2 = client.channels.cache.get('953007453308583956');
+        if(channel2?.isText()) {
+            channel2.messages.fetch('953007819379081218');
+        }
     }
 };
