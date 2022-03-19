@@ -1,6 +1,7 @@
 import { readdirSync } from "fs"
-import type { Event, Command } from './types';
 import { Client, Intents, Collection } from 'discord.js';
+
+import type { Command, Event } from './classes/index.js';
 
 export const client = new Client({
   intents: [
@@ -10,6 +11,14 @@ export const client = new Client({
     Intents.FLAGS.DIRECT_MESSAGES,
     Intents.FLAGS.GUILD_MESSAGE_REACTIONS
   ],
+});
+
+const Josh = require("@joshdb/core");
+const provider = require('@joshdb/sqlite');
+
+export const profiles = new Josh({
+  name: 'profiles',
+  provider,
 });
 
 export const commands = new Collection<string, Command>();
